@@ -259,6 +259,8 @@ runs:
       shell: bash
       run: |
         if [ ${{ inputs.upload }} = true ]; then
+          echo "Uploading results for event of type ${{ github.event_name }}"
+          echo "Uploading results for $ORGANIZATION_PROVIDER/$OWNER_NAME/$REPOSITORY_NAME commit $COMMIT_SHA"
           curl -XPOST -L -H "$CURL_CODACY_AUTH_AUTHENTICATION" \
             -H "Content-type: application/json" \
             "${CODACY_BASE_URL_OR_DEFAULT}/2.0/$ORGANIZATION_PROVIDER/$OWNER_NAME/$REPOSITORY_NAME/commit/$COMMIT_SHA/resultsFinal"

@@ -1,7 +1,7 @@
 # action.yml
-name: "Codacy Analysis CLI"
-author: "Codacy"
-description: "Execute Codacy code analysis using your remote Codacy configuration"
+name: "Troubleshoot Codacy Analysis CLI"
+author: "troubleshoot-codacy"
+description: "Troubleshoot to execute Codacy code analysis using your remote Codacy configuration"
 branding:
   icon: "check"
   color: "gray-dark"

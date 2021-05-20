@@ -260,7 +260,7 @@ runs:
         if [ ${{ inputs.upload }} = true ]; then
           curl -XPOST -L -H "$CURL_CODACY_AUTH_AUTHENTICATION" \
             -H "Content-type: application/json" \
-            "${CODACY_BASE_URL_OR_DEFAULT}/2.0/$ORGANIZATION_PROVIDER/$OWNER_NAME/$REPOSITORY_NAME/commit/$GITHUB_SHA/resultsFinal"
+            "${CODACY_BASE_URL_OR_DEFAULT}/2.0/$ORGANIZATION_PROVIDER/$OWNER_NAME/$REPOSITORY_NAME/commit/${{ github.event.pull_request.head.sha }}/resultsFinal"
         else
           echo "Skipping results upload"
         fi
